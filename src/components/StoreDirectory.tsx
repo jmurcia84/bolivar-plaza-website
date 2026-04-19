@@ -22,6 +22,15 @@ function FacebookIcon({ size = 16 }: { size?: number }) {
   );
 }
 
+function WhatsAppIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.845L0 24l6.335-1.508A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 01-5.006-1.374l-.36-.214-3.762.895.956-3.668-.234-.375A9.818 9.818 0 012.182 12C2.182 6.577 6.577 2.182 12 2.182S21.818 6.577 21.818 12 17.423 21.818 12 21.818z"/>
+    </svg>
+  );
+}
+
 interface Tienda {
   nombre: string;
   categoria: string;
@@ -32,6 +41,7 @@ interface Tienda {
   foto_local: string;
   instagram: string;
   facebook: string;
+  whatsapp: string;
   tiktok: string;
   web: string;
 }
@@ -155,8 +165,19 @@ export default function StoreDirectory({ tiendas }: { tiendas: Tienda[] }) {
                   )}
 
                   {/* Social links */}
-                  {(tienda.instagram || tienda.facebook || tienda.web) && (
+                  {(tienda.instagram || tienda.facebook || tienda.whatsapp || tienda.web) && (
                     <div className="flex gap-3 pt-3 border-t border-[#e8e8e2]">
+                      {tienda.whatsapp && (
+                        <a
+                          href={`https://wa.me/${tienda.whatsapp}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`WhatsApp de ${tienda.nombre}`}
+                          className="text-[#717171] hover:text-[#25D366] transition-colors"
+                        >
+                          <WhatsAppIcon size={16} />
+                        </a>
+                      )}
                       {tienda.instagram && (
                         <a
                           href={tienda.instagram}
@@ -174,7 +195,7 @@ export default function StoreDirectory({ tiendas }: { tiendas: Tienda[] }) {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={`Facebook de ${tienda.nombre}`}
-                          className="text-[#717171] hover:text-[#8fc74a] transition-colors"
+                          className="text-[#717171] hover:text-[#1877F2] transition-colors"
                         >
                           <FacebookIcon size={16} />
                         </a>
