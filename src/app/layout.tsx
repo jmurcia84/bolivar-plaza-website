@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import NetlifyIdentity from "@/components/NetlifyIdentity";
 import "./globals.css";
 
@@ -49,8 +50,18 @@ export default function RootLayout({
       className={`${playfair.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {/* Captura el token ANTES de que el widget lo consuma y lo borre del hash */}
+        <Script id="nf-token-capture" strategy="beforeInteractive">{`
+          (function(){
+            var h = window.location.hash || '';
+            var tokens = ['invite_token','confirmation_token','recovery_token'];
+            if (tokens.some(function(t){ return h.indexOf(t) !== -1; })) {
+              try { sessionStorage.setItem('nf_redirect_admin','1'); } catch(e){}
+            }
+          })();
+        `}</Script>
         {children}
-        {/* Netlify Identity — intercepta tokens de invite/recovery y redirige a /admin tras login */}
+        {/* Netlify Identity — redirige a /admin tras completar login/invite */}
         <NetlifyIdentity />
       </body>
     </html>
