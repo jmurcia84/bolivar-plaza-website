@@ -40,11 +40,7 @@ collections:
             widget: "list"
             fields:
               - { label: "ID", name: "id", widget: "string" }
-              - { label: "Imagen de fondo", name: "imagen", widget: "image", required: false }
-              - { label: "Título", name: "titulo", widget: "string" }
-              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
-              - { label: "Texto del botón", name: "cta_texto", widget: "string" }
-              - { label: "Enlace del botón", name: "cta_link", widget: "string" }
+              - { label: "Imagen", name: "imagen", widget: "image", required: false }
 
       - name: "marcas"
         label: "Logos de Marcas (Slider)"
@@ -120,14 +116,3 @@ collections:
       - { label: "Descripción", name: "descripcion", widget: "text" }
       - { label: "Imagen del evento", name: "imagen", widget: "image", required: false }
       - { label: "Enlace externo (opcional)", name: "link", widget: "string", required: false }
-
-  # ── Cartelera de cine ──────────────────────────────────────────────
-  - name: "cine"
-    label: "Cartelera de Cine"
-    folder: "content/cine"
-    create: true
-    format: json
-    slug: "{{slug}}"
-    fields:
-      - { label: "Título de la película", name: "titulo", widget: "string", hint: "Solo para identificar en el CMS — no se muestra en el sitio" }
-      - { label: "Imagen promocional del póster", name: "imagen", widget: "image", hint: "Sube la imagen oficial del afiche de la película" }

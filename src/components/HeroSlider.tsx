@@ -6,10 +6,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 interface Slide {
   id: string;
   imagen: string;
-  titulo: string;
-  subtitulo: string;
-  cta_texto: string;
-  cta_link: string;
 }
 
 interface HeroSliderProps {
@@ -49,9 +45,9 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
 
   return (
     <section className="relative w-full h-screen min-h-[560px] max-h-[800px] overflow-hidden bg-[#1a1a1a] pb-24">
-      {/* Background — CSS backgroundImage funciona con cualquier URL (local o externa) */}
+      {/* Background */}
       <div className="absolute inset-0">
-        {/* Gradiente base siempre presente — visible si la imagen no carga */}
+        {/* Gradiente base — fallback cuando no hay imagen */}
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(135deg, #1a1a1a 0%, #2d3a1e 60%, #1a1a1a 100%)" }}
@@ -73,7 +69,7 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
           }}
         />
 
-        {/* Imagen del CMS encima del gradiente */}
+        {/* Imagen del CMS */}
         {slide.imagen && (
           <div
             className="absolute inset-0 transition-opacity duration-700"
@@ -85,50 +81,9 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
             }}
           />
         )}
-
-        {/* Overlay oscuro para legibilidad — solo cuando hay imagen */}
-        {slide.imagen && <div className="absolute inset-0 bg-black/45" />}
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-2xl">
-            <span className="inline-block bg-[#8fc74a] text-white text-xs font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full mb-6">
-              Pereira · Risaralda
-            </span>
-
-            <h1
-              key={slide.id}
-              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 transition-all duration-500"
-              style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}
-            >
-              {slide.titulo}
-            </h1>
-
-            <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-xl">
-              {slide.subtitulo}
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <a
-                href={slide.cta_link}
-                className="inline-flex items-center bg-[#8fc74a] hover:bg-[#7ab33b] text-white font-semibold px-7 py-3.5 rounded-lg transition-colors text-sm"
-              >
-                {slide.cta_texto}
-              </a>
-              <a
-                href="#contacto"
-                className="inline-flex items-center border border-white/30 hover:border-white/60 text-white font-medium px-7 py-3.5 rounded-lg transition-colors text-sm"
-              >
-                Arrendar local
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Slide indicators */}
+      {/* Indicadores de slide */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {slides.map((_, i) => (
           <button
@@ -142,7 +97,7 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
         ))}
       </div>
 
-      {/* Arrows */}
+      {/* Flechas */}
       <button
         onClick={prev}
         aria-label="Diapositiva anterior"
