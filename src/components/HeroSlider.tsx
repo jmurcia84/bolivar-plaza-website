@@ -79,7 +79,7 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
             className="absolute inset-0 transition-opacity duration-700"
             style={{
               backgroundImage: `url(${slide.imagen})`,
-              backgroundSize: "cover",
+              backgroundSize: "contain",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
