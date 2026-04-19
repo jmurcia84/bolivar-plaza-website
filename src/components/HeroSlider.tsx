@@ -76,8 +76,13 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
         {/* Imagen del CMS encima del gradiente */}
         {slide.imagen && (
           <div
-            className="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
-            style={{ backgroundImage: `url(${slide.imagen})` }}
+            className="absolute inset-0 transition-opacity duration-700"
+            style={{
+              backgroundImage: `url(${slide.imagen})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
           />
         )}
 
