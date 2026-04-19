@@ -1,13 +1,228 @@
 {
   "marcas": [
-    { "nombre": "Zara", "logo": "" },
-    { "nombre": "Tennis", "logo": "" },
-    { "nombre": "Off Corss", "logo": "" },
-    { "nombre": "Presto", "logo": "" },
-    { "nombre": "Crepes & Waffles", "logo": "" },
-    { "nombre": "OMA", "logo": "" },
-    { "nombre": "Cine Colombia", "logo": "" },
-    { "nombre": "Banco de Bogotá", "logo": "" },
-    { "nombre": "Cruz Verde", "logo": "" }
+    {
+      "nombre": "24/Siete",
+      "logo": ""
+    },
+    {
+      "nombre": "Apostar",
+      "logo": ""
+    },
+    {
+      "nombre": "Arte y Estilo",
+      "logo": ""
+    },
+    {
+      "nombre": "Burbujas Sodas & Micheladas",
+      "logo": ""
+    },
+    {
+      "nombre": "Buró Café",
+      "logo": ""
+    },
+    {
+      "nombre": "CDM Accesorios y Conectividad",
+      "logo": ""
+    },
+    {
+      "nombre": "CMO Smash Burger",
+      "logo": ""
+    },
+    {
+      "nombre": "Cabellos Mágicos",
+      "logo": ""
+    },
+    {
+      "nombre": "Café Scanno",
+      "logo": ""
+    },
+    {
+      "nombre": "Candyland",
+      "logo": ""
+    },
+    {
+      "nombre": "Cine Royal Films",
+      "logo": ""
+    },
+    {
+      "nombre": "Claro Comnorte",
+      "logo": ""
+    },
+    {
+      "nombre": "Colchones Comodísimos",
+      "logo": ""
+    },
+    {
+      "nombre": "Credicoop",
+      "logo": ""
+    },
+    {
+      "nombre": "Cruz Verde",
+      "logo": ""
+    },
+    {
+      "nombre": "D'Mario Relojes",
+      "logo": ""
+    },
+    {
+      "nombre": "Deli Joice",
+      "logo": ""
+    },
+    {
+      "nombre": "Dental Place",
+      "logo": ""
+    },
+    {
+      "nombre": "DirecTV",
+      "logo": ""
+    },
+    {
+      "nombre": "EMI",
+      "logo": ""
+    },
+    {
+      "nombre": "El Brasero Antioqueño",
+      "logo": ""
+    },
+    {
+      "nombre": "Essence Fragancias",
+      "logo": ""
+    },
+    {
+      "nombre": "Fruvita",
+      "logo": ""
+    },
+    {
+      "nombre": "Ibiza Plaza Casino",
+      "logo": ""
+    },
+    {
+      "nombre": "Il Cafessino",
+      "logo": ""
+    },
+    {
+      "nombre": "Iska Nails",
+      "logo": ""
+    },
+    {
+      "nombre": "Joyería Javam",
+      "logo": ""
+    },
+    {
+      "nombre": "La Tangueria",
+      "logo": ""
+    },
+    {
+      "nombre": "Librancoop S.A.S",
+      "logo": ""
+    },
+    {
+      "nombre": "MECA Agencia de Viajes",
+      "logo": ""
+    },
+    {
+      "nombre": "Maki Sushi",
+      "logo": ""
+    },
+    {
+      "nombre": "María Mediadora",
+      "logo": ""
+    },
+    {
+      "nombre": "McDonald's",
+      "logo": ""
+    },
+    {
+      "nombre": "Mobile",
+      "logo": ""
+    },
+    {
+      "nombre": "Money Dinero",
+      "logo": ""
+    },
+    {
+      "nombre": "Nuquí",
+      "logo": ""
+    },
+    {
+      "nombre": "Palmanova Pizzería",
+      "logo": ""
+    },
+    {
+      "nombre": "Play Point",
+      "logo": ""
+    },
+    {
+      "nombre": "Prosegur",
+      "logo": ""
+    },
+    {
+      "nombre": "Púrpura Accesorios",
+      "logo": ""
+    },
+    {
+      "nombre": "Recetas Montañeras",
+      "logo": ""
+    },
+    {
+      "nombre": "Ristretto Espresso",
+      "logo": ""
+    },
+    {
+      "nombre": "Sayonara",
+      "logo": ""
+    },
+    {
+      "nombre": "Sei Beauty",
+      "logo": ""
+    },
+    {
+      "nombre": "Sexo Sentido",
+      "logo": ""
+    },
+    {
+      "nombre": "Simple Pago",
+      "logo": ""
+    },
+    {
+      "nombre": "Smoothberry Heladería",
+      "logo": ""
+    },
+    {
+      "nombre": "Sándwich Qbano",
+      "logo": ""
+    },
+    {
+      "nombre": "Toro Gold",
+      "logo": ""
+    },
+    {
+      "nombre": "Toy San",
+      "logo": ""
+    },
+    {
+      "nombre": "Urbano Restaurante",
+      "logo": ""
+    },
+    {
+      "nombre": "Vallarta",
+      "logo": ""
+    },
+    {
+      "nombre": "Viajemás Outlet",
+      "logo": ""
+    },
+    {
+      "nombre": "WOM Colombia",
+      "logo": ""
+    },
+    {
+      "nombre": "Western Union",
+      "logo": ""
+    },
+    {
+      "nombre": "Óptica Diana Tabares",
+      "logo": ""
+    }
   ]
 }

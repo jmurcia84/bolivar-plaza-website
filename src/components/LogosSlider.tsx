@@ -24,7 +24,7 @@ export default function LogosSlider({ marcas }: { marcas: Marca[] }) {
         <div
           className="flex gap-12 items-center"
           style={{
-            animation: "marquee 30s linear infinite",
+            animation: `marquee ${Math.max(30, marcas.length * 2)}s linear infinite`,
             width: "max-content",
           }}
         >
