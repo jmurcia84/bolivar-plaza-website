@@ -134,6 +134,9 @@ collections:
           Foto principal de la tienda o vitrina. Tamaño recomendado: 800 × 450 px.
           Relación de aspecto 16:9 o 4:3 (horizontal). Formato JPG. Peso máximo 300 KB.
           Se muestra recortada a 176 px de alto ocupando todo el ancho de la tarjeta.
+      - { label: "Instagram URL", name: "instagram", widget: "string", required: false, hint: "Ej: https://www.instagram.com/nombretienda/" }
+      - { label: "Facebook URL", name: "facebook", widget: "string", required: false, hint: "Ej: https://www.facebook.com/nombretienda/" }
+      - { label: "WhatsApp (número con código de país)", name: "whatsapp", widget: "string", required: false, hint: "Ej: 573001234567 (sin +, sin espacios). Se usará para generar enlace wa.me/..." }
 
   # ── Eventos ────────────────────────────────────────────────────────
   - name: "eventos"
