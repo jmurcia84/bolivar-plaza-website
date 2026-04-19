@@ -1,0 +1,28 @@
+{
+  "slides": [
+    {
+      "id": "1",
+      "imagen": "/images/uploads/slide-1.jpg",
+      "titulo": "Donde el centro eres tú.",
+      "subtitulo": "Más de 120 tiendas, gastronomía y entretenimiento en el corazón de Pereira.",
+      "cta_texto": "Ver tiendas",
+      "cta_link": "#tiendas"
+    },
+    {
+      "id": "2",
+      "imagen": "/images/uploads/slide-2.jpg",
+      "titulo": "La mejor gastronomía de Pereira.",
+      "subtitulo": "Restaurantes y cafés para toda la familia, todos los días.",
+      "cta_texto": "Ver restaurantes",
+      "cta_link": "#tiendas"
+    },
+    {
+      "id": "3",
+      "imagen": "/images/uploads/slide-3.jpg",
+      "titulo": "Diversión para toda la familia.",
+      "subtitulo": "Zona de niños, cine y eventos especiales cada semana.",
+      "cta_texto": "Ver eventos",
+      "cta_link": "#eventos"
+    }
+  ]
+}

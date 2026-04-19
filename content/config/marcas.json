@@ -1,0 +1,13 @@
+{
+  "marcas": [
+    { "nombre": "Zara", "logo": "" },
+    { "nombre": "Tennis", "logo": "" },
+    { "nombre": "Off Corss", "logo": "" },
+    { "nombre": "Presto", "logo": "" },
+    { "nombre": "Crepes & Waffles", "logo": "" },
+    { "nombre": "OMA", "logo": "" },
+    { "nombre": "Cine Colombia", "logo": "" },
+    { "nombre": "Banco de Bogotá", "logo": "" },
+    { "nombre": "Cruz Verde", "logo": "" }
+  ]
+}

@@ -1,0 +1,133 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+locale: es
+
+collections:
+  # ── Configuración general ──────────────────────────────────────────
+  - name: "configuracion"
+    label: "Configuración"
+    files:
+      - name: "general"
+        label: "Información General"
+        file: "content/config/general.json"
+        format: json
+        fields:
+          - { label: "Nombre del mall", name: "nombre", widget: "string" }
+          - { label: "Slogan", name: "slogan", widget: "string" }
+          - { label: "Descripción", name: "descripcion", widget: "text" }
+          - { label: "Dirección", name: "direccion", widget: "string" }
+          - { label: "Teléfono", name: "telefono", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Horario (Lun-Sáb)", name: "horario", widget: "string" }
+          - { label: "Horario (Dom y festivos)", name: "horario_domingo", widget: "string" }
+          - { label: "Años en operación", name: "anos_operacion", widget: "number" }
+          - { label: "Facebook URL", name: "facebook", widget: "string" }
+          - { label: "Instagram URL", name: "instagram", widget: "string" }
+          - { label: "TikTok URL", name: "tiktok", widget: "string" }
+
+      - name: "slider"
+        label: "Slider Principal"
+        file: "content/config/slider.json"
+        format: json
+        fields:
+          - label: "Diapositivas"
+            name: "slides"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Imagen de fondo", name: "imagen", widget: "image", required: false }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+              - { label: "Texto del botón", name: "cta_texto", widget: "string" }
+              - { label: "Enlace del botón", name: "cta_link", widget: "string" }
+
+      - name: "marcas"
+        label: "Logos de Marcas (Slider)"
+        file: "content/config/marcas.json"
+        format: json
+        fields:
+          - label: "Marcas"
+            name: "marcas"
+            widget: "list"
+            fields:
+              - { label: "Nombre de la marca", name: "nombre", widget: "string" }
+              - { label: "Logo", name: "logo", widget: "image", required: false }
+
+      - name: "popup"
+        label: "Pop-up de Bienvenida"
+        file: "content/config/popup.json"
+        format: json
+        fields:
+          - { label: "Activo", name: "activo", widget: "boolean", default: false, hint: "Activa o desactiva el pop-up al cargar la página" }
+          - { label: "Imagen", name: "imagen", widget: "image", required: false }
+          - { label: "Texto alternativo (accesibilidad)", name: "alt", widget: "string", required: false }
+          - label: "Tamaño del pop-up"
+            name: "tamano"
+            widget: "select"
+            default: "mediano"
+            hint: "Ajusta el ancho del pop-up según la campaña"
+            options:
+              - { label: "Pequeño (360px)", value: "pequeno" }
+              - { label: "Mediano (480px)", value: "mediano" }
+              - { label: "Grande (640px)", value: "grande" }
+              - { label: "Panorámico (800px)", value: "panoramico" }
+          - { label: "Enlace al hacer clic (opcional)", name: "link", widget: "string", required: false }
+          - { label: "Texto del botón", name: "link_texto", widget: "string", required: false, default: "Ver más" }
+
+  # ── Tiendas ────────────────────────────────────────────────────────
+  - name: "tiendas"
+    label: "Tiendas"
+    folder: "content/tiendas"
+    create: true
+    format: json
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nombre de la tienda", name: "nombre", widget: "string" }
+      - label: "Categoría"
+        name: "categoria"
+        widget: "select"
+        options: ["Moda", "Gastronomía", "Entretenimiento", "Servicios"]
+      - { label: "Descripción breve", name: "descripcion", widget: "text", required: false }
+      - { label: "Número de local", name: "numero_local", widget: "string" }
+      - label: "Piso"
+        name: "piso"
+        widget: "select"
+        options: ["1", "2", "3", "4"]
+      - { label: "Logo de la tienda", name: "logo", widget: "image", required: false }
+      - { label: "Foto del local", name: "foto_local", widget: "image", required: false }
+      - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+      - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+      - { label: "TikTok URL", name: "tiktok", widget: "string", required: false }
+      - { label: "Sitio web URL", name: "web", widget: "string", required: false }
+
+  # ── Eventos ────────────────────────────────────────────────────────
+  - name: "eventos"
+    label: "Eventos"
+    folder: "content/eventos"
+    create: true
+    format: json
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título del evento", name: "titulo", widget: "string" }
+      - { label: "Fecha", name: "fecha", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Hora", name: "hora", widget: "string", required: false, hint: "Ej: 3:00 p.m." }
+      - { label: "Lugar", name: "lugar", widget: "string", required: false, hint: "Ej: Plaza central" }
+      - { label: "Descripción", name: "descripcion", widget: "text" }
+      - { label: "Imagen del evento", name: "imagen", widget: "image", required: false }
+      - { label: "Enlace externo (opcional)", name: "link", widget: "string", required: false }
+
+  # ── Cartelera de cine ──────────────────────────────────────────────
+  - name: "cine"
+    label: "Cartelera de Cine"
+    folder: "content/cine"
+    create: true
+    format: json
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título de la película", name: "titulo", widget: "string", hint: "Solo para identificar en el CMS — no se muestra en el sitio" }
+      - { label: "Imagen promocional del póster", name: "imagen", widget: "image", hint: "Sube la imagen oficial del afiche de la película" }
