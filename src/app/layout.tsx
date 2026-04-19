@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -47,7 +48,25 @@ export default function RootLayout({
       lang="es"
       className={`${playfair.variable} ${dmSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        {/* Netlify Identity widget — necesario para procesar tokens de invite/recovery en la raíz */}
+        <Script
+          src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+          strategy="afterInteractive"
+        />
+        <Script id="netlify-identity-redirect" strategy="afterInteractive">{`
+          if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", function(user) {
+              if (!user) {
+                window.netlifyIdentity.on("login", function() {
+                  document.location.href = "/admin/";
+                });
+              }
+            });
+          }
+        `}</Script>
+      </body>
     </html>
   );
 }

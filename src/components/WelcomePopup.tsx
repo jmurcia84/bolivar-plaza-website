@@ -25,6 +25,10 @@ export default function WelcomePopup({ config }: { config: PopupConfig }) {
 
   useEffect(() => {
     if (!config.activo) return;
+    // No mostrar el popup si hay un token de Netlify Identity en la URL
+    // (invite, confirmación de email, recuperación de contraseña, etc.)
+    const identityTokens = ["invite_token", "confirmation_token", "recovery_token", "access_token"];
+    if (identityTokens.some((t) => window.location.hash.includes(t))) return;
     const timer = setTimeout(() => setVisible(true), 800);
     return () => clearTimeout(timer);
   }, [config.activo]);
