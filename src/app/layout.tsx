@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
-import Script from "next/script";
+import NetlifyIdentity from "@/components/NetlifyIdentity";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -50,22 +50,8 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         {children}
-        {/* Netlify Identity widget — necesario para procesar tokens de invite/recovery en la raíz */}
-        <Script
-          src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-          strategy="afterInteractive"
-        />
-        <Script id="netlify-identity-redirect" strategy="afterInteractive">{`
-          if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", function(user) {
-              if (!user) {
-                window.netlifyIdentity.on("login", function() {
-                  document.location.href = "/admin/";
-                });
-              }
-            });
-          }
-        `}</Script>
+        {/* Netlify Identity — intercepta tokens de invite/recovery y redirige a /admin tras login */}
+        <NetlifyIdentity />
       </body>
     </html>
   );
