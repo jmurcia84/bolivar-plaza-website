@@ -72,7 +72,7 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
         {/* Imagen del CMS — empieza debajo del navbar fijo (h-20 md:h-24) */}
         {slide.imagen && (
           <div
-            className="absolute inset-x-0 bottom-0 top-20 md:top-24 transition-opacity duration-700"
+            className="absolute inset-x-0 bottom-0 top-24 md:top-28 transition-opacity duration-700"
             style={{
               backgroundImage: `url(${slide.imagen})`,
               backgroundSize: "contain",

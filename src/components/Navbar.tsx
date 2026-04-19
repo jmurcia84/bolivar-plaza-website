@@ -32,15 +32,15 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="flex items-center justify-between h-24 md:h-28">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
               src="/images/logo.png"
               alt="Centro Comercial Bolívar Plaza"
-              width={160}
-              height={48}
-              className="h-14 w-auto object-contain"
+              width={240}
+              height={72}
+              className="h-[84px] w-auto object-contain"
               priority
             />
           </Link>
@@ -51,14 +51,14 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-[#1a1a1a] hover:text-[#8fc74a] transition-colors"
+                className="text-base font-medium text-[#1a1a1a] hover:text-[#8fc74a] transition-colors"
               >
                 {link.label}
               </a>
             ))}
             <a
               href="/#contacto"
-              className="ml-2 bg-[#8fc74a] hover:bg-[#7ab33b] text-white text-sm font-semibold px-5 py-2 rounded-lg transition-colors"
+              className="ml-2 bg-[#8fc74a] hover:bg-[#7ab33b] text-white text-base font-semibold px-5 py-2 rounded-lg transition-colors"
             >
               Arrendar local
             </a>
