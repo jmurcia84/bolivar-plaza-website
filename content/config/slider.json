@@ -2,27 +2,27 @@
   "slides": [
     {
       "id": "1",
-      "imagen": "https://www.ccbolivarplaza.com/admin/modulos/gestorArchivos/files/slide/banner%20safari.jpg",
+      "imagen": "/images/uploads/banner-safari.jpg",
       "titulo": "Donde el centro eres tú.",
       "subtitulo": "Más de 120 tiendas, gastronomía y entretenimiento en el corazón de Pereira.",
       "cta_texto": "Ver tiendas",
-      "cta_link": "#tiendas"
+      "cta_link": "/tiendas"
     },
     {
       "id": "2",
-      "imagen": "/images/uploads/slide-2.jpg",
+      "imagen": "",
       "titulo": "La mejor gastronomía de Pereira.",
       "subtitulo": "Restaurantes y cafés para toda la familia, todos los días.",
       "cta_texto": "Ver restaurantes",
-      "cta_link": "#tiendas"
+      "cta_link": "/tiendas?categoria=Gastronom%C3%ADa"
     },
     {
       "id": "3",
-      "imagen": "/images/uploads/slide-3.jpg",
+      "imagen": "",
       "titulo": "Diversión para toda la familia.",
       "subtitulo": "Zona de niños, cine y eventos especiales cada semana.",
       "cta_texto": "Ver eventos",
-      "cta_link": "#eventos"
+      "cta_link": "/eventos"
     }
   ]
 }

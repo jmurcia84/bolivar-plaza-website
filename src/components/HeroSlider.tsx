@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Slide {
@@ -50,50 +49,40 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
 
   return (
     <section className="relative w-full h-screen min-h-[560px] max-h-[800px] overflow-hidden bg-[#1a1a1a] pb-24">
-      {/* Background — imagen del CMS o gradiente de fallback */}
-      <div className="absolute inset-0 transition-opacity duration-700">
-        {slide.imagen ? (
-          <>
-            <Image
-              src={slide.imagen}
-              alt={slide.titulo}
-              fill
-              className="object-cover"
-              priority={current === 0}
-            />
-            {/* Overlay oscuro para legibilidad del texto */}
-            <div className="absolute inset-0 bg-black/50" />
-          </>
-        ) : (
-          <>
-            <div
-              className="absolute inset-0"
-              style={{
-                background: "linear-gradient(135deg, #1a1a1a 0%, #2d3a1e 60%, #1a1a1a 100%)",
-              }}
-            />
-            <div
-              className="absolute top-0 right-0 w-[60%] h-full opacity-10"
-              style={{
-                background: "radial-gradient(ellipse at 80% 20%, #8fc74a 0%, transparent 60%)",
-              }}
-            />
-            <div
-              className="absolute bottom-0 left-0 w-[40%] h-[60%] opacity-5"
-              style={{
-                background: "radial-gradient(ellipse at 20% 80%, #8fc74a 0%, transparent 70%)",
-              }}
-            />
-            <div
-              className="absolute inset-0 opacity-[0.04]"
-              style={{
-                backgroundImage:
-                  "linear-gradient(#8fc74a 1px, transparent 1px), linear-gradient(90deg, #8fc74a 1px, transparent 1px)",
-                backgroundSize: "60px 60px",
-              }}
-            />
-          </>
+      {/* Background — CSS backgroundImage funciona con cualquier URL (local o externa) */}
+      <div className="absolute inset-0">
+        {/* Gradiente base siempre presente — visible si la imagen no carga */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(135deg, #1a1a1a 0%, #2d3a1e 60%, #1a1a1a 100%)" }}
+        />
+        <div
+          className="absolute top-0 right-0 w-[60%] h-full opacity-10"
+          style={{ background: "radial-gradient(ellipse at 80% 20%, #8fc74a 0%, transparent 60%)" }}
+        />
+        <div
+          className="absolute bottom-0 left-0 w-[40%] h-[60%] opacity-5"
+          style={{ background: "radial-gradient(ellipse at 20% 80%, #8fc74a 0%, transparent 70%)" }}
+        />
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#8fc74a 1px, transparent 1px), linear-gradient(90deg, #8fc74a 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+
+        {/* Imagen del CMS encima del gradiente */}
+        {slide.imagen && (
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
+            style={{ backgroundImage: `url(${slide.imagen})` }}
+          />
         )}
+
+        {/* Overlay oscuro para legibilidad — solo cuando hay imagen */}
+        {slide.imagen && <div className="absolute inset-0 bg-black/45" />}
       </div>
 
       {/* Content */}
