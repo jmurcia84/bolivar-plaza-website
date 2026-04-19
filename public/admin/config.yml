@@ -40,7 +40,14 @@ collections:
             widget: "list"
             fields:
               - { label: "ID", name: "id", widget: "string" }
-              - { label: "Imagen", name: "imagen", widget: "image", required: false }
+              - label: "Imagen"
+                name: "imagen"
+                widget: "image"
+                required: false
+                hint: >
+                  Imagen horizontal (paisaje). Tamaño recomendado: 1920 × 800 px.
+                  Relación de aspecto 16:5 o similar. Formato JPG. Peso máximo 500 KB.
+                  La imagen se escala para ocupar todo el ancho del slider sin recortarse.
 
       - name: "marcas"
         label: "Logos de Marcas (Slider)"
@@ -52,7 +59,14 @@ collections:
             widget: "list"
             fields:
               - { label: "Nombre de la marca", name: "nombre", widget: "string" }
-              - { label: "Logo", name: "logo", widget: "image", required: false }
+              - label: "Logo"
+                name: "logo"
+                widget: "image"
+                required: false
+                hint: >
+                  Logo de la marca. Tamaño recomendado: 200 × 80 px (horizontal).
+                  Fondo transparente preferiblemente (PNG). Peso máximo 50 KB.
+                  Se muestra en escala de grises y a color al pasar el cursor.
 
       - name: "popup"
         label: "Pop-up de Bienvenida"
@@ -60,18 +74,28 @@ collections:
         format: json
         fields:
           - { label: "Activo", name: "activo", widget: "boolean", default: false, hint: "Activa o desactiva el pop-up al cargar la página" }
-          - { label: "Imagen", name: "imagen", widget: "image", required: false }
+          - label: "Imagen"
+            name: "imagen"
+            widget: "image"
+            required: false
+            hint: >
+              Imagen de la campaña o promoción. Puede ser vertical (flyer tipo story: 1080 × 1920 px)
+              o horizontal (banner: 1200 × 800 px). La imagen se muestra completa sin recorte,
+              ajustada al tamaño seleccionado abajo. Formato JPG o PNG. Peso máximo 400 KB.
           - { label: "Texto alternativo (accesibilidad)", name: "alt", widget: "string", required: false }
           - label: "Tamaño del pop-up"
             name: "tamano"
             widget: "select"
             default: "mediano"
-            hint: "Ajusta el ancho del pop-up según la campaña"
+            hint: >
+              Define el ancho máximo del pop-up. Elige según el formato de la imagen:
+              Pequeño para íconos o avisos breves · Mediano para flyers verticales ·
+              Grande o Panorámico para banners horizontales.
             options:
-              - { label: "Pequeño (360px)", value: "pequeno" }
-              - { label: "Mediano (480px)", value: "mediano" }
-              - { label: "Grande (640px)", value: "grande" }
-              - { label: "Panorámico (800px)", value: "panoramico" }
+              - { label: "Pequeño (360px) — íconos o avisos cortos", value: "pequeno" }
+              - { label: "Mediano (480px) — flyers verticales tipo story", value: "mediano" }
+              - { label: "Grande (640px) — imágenes con detalle", value: "grande" }
+              - { label: "Panorámico (800px) — banners horizontales", value: "panoramico" }
           - { label: "Enlace al hacer clic (opcional)", name: "link", widget: "string", required: false }
           - { label: "Texto del botón", name: "link_texto", widget: "string", required: false, default: "Ver más" }
 
@@ -88,18 +112,28 @@ collections:
         name: "categoria"
         widget: "select"
         options: ["Moda", "Gastronomía", "Entretenimiento", "Servicios"]
-      - { label: "Descripción breve", name: "descripcion", widget: "text", required: false }
+      - { label: "Descripción breve", name: "descripcion", widget: "text", required: false, hint: "Máximo 2 líneas visibles en la tarjeta (aprox. 120 caracteres)" }
       - { label: "Número de local", name: "numero_local", widget: "string" }
       - label: "Piso"
         name: "piso"
         widget: "select"
         options: ["1", "2", "3", "4"]
-      - { label: "Logo de la tienda", name: "logo", widget: "image", required: false }
-      - { label: "Foto del local", name: "foto_local", widget: "image", required: false }
-      - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
-      - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
-      - { label: "TikTok URL", name: "tiktok", widget: "string", required: false }
-      - { label: "Sitio web URL", name: "web", widget: "string", required: false }
+      - label: "Logo de la tienda"
+        name: "logo"
+        widget: "image"
+        required: false
+        hint: >
+          Logo de la tienda. Tamaño recomendado: 120 × 120 px (cuadrado).
+          Fondo transparente (PNG) o blanco. Peso máximo 80 KB.
+          Se muestra como miniatura de 36 × 36 px junto al nombre de la tienda.
+      - label: "Foto del local"
+        name: "foto_local"
+        widget: "image"
+        required: false
+        hint: >
+          Foto principal de la tienda o vitrina. Tamaño recomendado: 800 × 450 px.
+          Relación de aspecto 16:9 o 4:3 (horizontal). Formato JPG. Peso máximo 300 KB.
+          Se muestra recortada a 176 px de alto ocupando todo el ancho de la tarjeta.
 
   # ── Eventos ────────────────────────────────────────────────────────
   - name: "eventos"
@@ -114,5 +148,12 @@ collections:
       - { label: "Hora", name: "hora", widget: "string", required: false, hint: "Ej: 3:00 p.m." }
       - { label: "Lugar", name: "lugar", widget: "string", required: false, hint: "Ej: Plaza central" }
       - { label: "Descripción", name: "descripcion", widget: "text" }
-      - { label: "Imagen del evento", name: "imagen", widget: "image", required: false }
+      - label: "Imagen del evento"
+        name: "imagen"
+        widget: "image"
+        required: false
+        hint: >
+          Afiche o imagen del evento. Tamaño recomendado: 800 × 450 px.
+          Relación de aspecto 16:9 (horizontal). Formato JPG o PNG. Peso máximo 300 KB.
+          Se muestra recortada a 176 px de alto ocupando todo el ancho de la tarjeta de evento.
       - { label: "Enlace externo (opcional)", name: "link", widget: "string", required: false }
