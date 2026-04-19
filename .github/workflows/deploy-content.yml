@@ -1,0 +1,17 @@
+name: Despliegue diario de contenido CMS
+
+on:
+  schedule:
+    # Todos los días a las 8:00 AM hora Colombia (UTC-5 → 13:00 UTC)
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+    # También permite disparar manualmente desde GitHub Actions
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Disparar build en Netlify
+        run: |
+          curl -s -X POST "${{ secrets.NETLIFY_BUILD_HOOK }}"
+          echo "Build disparado correctamente"

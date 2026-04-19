@@ -1,6 +1,9 @@
 [build]
   command = "npm run build"
   publish = "out"
+  # Saltar el build si solo cambió content/ (commits del CMS)
+  # Solo buildea cuando cambia código, estilos, config o dependencias
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- src/ public/ package.json next.config.ts netlify.toml"
 
 [[headers]]
   for = "/admin/*"
