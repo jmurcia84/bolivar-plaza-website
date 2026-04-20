@@ -34,6 +34,8 @@ collections:
         label: "Slider Principal"
         file: "content/config/slider.json"
         format: json
+        media_folder: "public/images/uploads/slider"
+        public_folder: "/images/uploads/slider"
         fields:
           - label: "Diapositivas"
             name: "slides"
@@ -50,9 +52,11 @@ collections:
                   La imagen se escala para ocupar todo el ancho del slider sin recortarse.
 
       - name: "marcas"
-        label: "Logos de Marcas (Slider)"
+        label: "Logos de Marcas (Ticker)"
         file: "content/config/marcas.json"
         format: json
+        media_folder: "public/images/uploads/marcas"
+        public_folder: "/images/uploads/marcas"
         fields:
           - label: "Marcas"
             name: "marcas"
@@ -66,12 +70,14 @@ collections:
                 hint: >
                   Logo de la marca. Tamaño recomendado: 200 × 80 px (horizontal).
                   Fondo transparente preferiblemente (PNG). Peso máximo 50 KB.
-                  Se muestra en escala de grises y a color al pasar el cursor.
+                  Se muestra a color en el ticker de marcas.
 
       - name: "popup"
         label: "Pop-up de Bienvenida"
         file: "content/config/popup.json"
         format: json
+        media_folder: "public/images/uploads/popup"
+        public_folder: "/images/uploads/popup"
         fields:
           - { label: "Activo", name: "activo", widget: "boolean", default: false, hint: "Activa o desactiva el pop-up al cargar la página" }
           - label: "Imagen"
@@ -106,6 +112,8 @@ collections:
     create: true
     format: json
     slug: "{{slug}}"
+    media_folder: "public/images/uploads/tiendas"
+    public_folder: "/images/uploads/tiendas"
     fields:
       - { label: "Nombre de la tienda", name: "nombre", widget: "string" }
       - label: "Categoría"
@@ -145,6 +153,8 @@ collections:
     create: true
     format: json
     slug: "{{slug}}"
+    media_folder: "public/images/uploads/eventos"
+    public_folder: "/images/uploads/eventos"
     fields:
       - { label: "Título del evento", name: "titulo", widget: "string" }
       - { label: "Fecha", name: "fecha", widget: "date", format: "YYYY-MM-DD" }

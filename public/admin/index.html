@@ -6,6 +6,40 @@
     <title>CMS — Bolívar Plaza</title>
     <!-- Netlify Identity widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+      /* Scale down large image previews in the editor so they don't overflow */
+      [class*="ImageWidgetWrapper"] img,
+      [class*="image-widget"] img,
+      .cms-editor-visual img,
+      .nc-imageWidget img {
+        max-width: 100% !important;
+        max-height: 300px !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin: 0 auto !important;
+        border-radius: 4px;
+      }
+
+      /* Scale previews in the media library grid */
+      [class*="GridItem"] img,
+      [class*="MediaLibrary"] img,
+      [class*="media-library"] img {
+        max-width: 100% !important;
+        max-height: 200px !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: cover !important;
+      }
+
+      /* Contain the image preview card so it doesn't stretch the layout */
+      [class*="ImageWidgetWrapper"],
+      [class*="image-widget"] {
+        max-width: 480px;
+        margin: 0 auto;
+      }
+    </style>
   </head>
   <body>
     <!-- Decap CMS -->
